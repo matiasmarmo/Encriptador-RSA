@@ -1,12 +1,20 @@
 package Main;
 
+import TextFileManager.TextFileReader;
 import TextFileManager.TextFileWriter;
 
 public class Main {
 	public static void main(String [] args) {
+		String fileName = "C:\\Users\\matum\\Desktop\\ab.txt";
+		
 		TextFileWriter writer = new TextFileWriter();
-		writer.write("C:\\Users\\matum\\Desktop\\ab.txt","hola");
-		writer.write("C:\\Users\\matum\\Desktop\\ab.txt","que");
-		writer.write("C:\\Users\\matum\\Desktop\\ab.txt","tal");
+		writer.write(fileName,"hola que tal ,,,daanonv  ?");
+		writer.write(fileName,"que haces maquina ? asdasd");
+		writer.write(fileName,"tal vez ?");
+		writer.write(fileName,"lalalal sd");
+		writer.write(fileName,"vamos a bailar");
+		
+		TextFileReader reader = new TextFileReader();
+		reader.read(fileName,3,2);
 	}
 }

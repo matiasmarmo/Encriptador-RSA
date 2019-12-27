@@ -1,5 +1,6 @@
 package Main;
 
+import RSA_Module.Encryptor;
 import TextFileManager.TextFileReader;
 import TextFileManager.TextFileWriter;
 
@@ -16,5 +17,8 @@ public class Main {
 		
 		TextFileReader reader = new TextFileReader();
 		reader.read(fileName,3,2);
+		
+		Encryptor a = new Encryptor();
+		a.encrypt("ab", 83, 89, 5009);
 	}
 }

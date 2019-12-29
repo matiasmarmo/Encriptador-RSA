@@ -5,7 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class TextFileReader {
-	public void read(String fileName, int initialLineNumber, int length){
+	public String read(String fileName, int initialLineNumber, int length){
 		int lineNumber;
 		int finalLineNumber = initialLineNumber + length;
 		int FileNumberOfLines = numberOfLines(fileName);
@@ -13,7 +13,7 @@ public class TextFileReader {
 		try {
 			FileReader readfile = new FileReader(fileName);
 		    BufferedReader readbuffer = new BufferedReader(readfile);
-		    for (lineNumber = 1; lineNumber < FileNumberOfLines; lineNumber++) {
+		    for (lineNumber = 0; lineNumber < FileNumberOfLines; lineNumber++) {
 		    	if (lineNumber >= initialLineNumber && lineNumber < finalLineNumber) {
 		    		text = text + readbuffer.readLine();
 		        } else
@@ -23,7 +23,7 @@ public class TextFileReader {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		System.out.println(" The specific Line is: " + text);
+		return text;
 	}
 	
 	private int numberOfLines(String fileName) {

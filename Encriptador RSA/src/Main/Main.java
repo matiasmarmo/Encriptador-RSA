@@ -1,12 +1,13 @@
 package Main;
 
+import RSA_Module.Decryptor;
 import RSA_Module.Encryptor;
 import TextFileManager.TextFileReader;
 import TextFileManager.TextFileWriter;
 
 public class Main {
 	public static void main(String [] args) {
-		String fileName = "C:\\Users\\matum\\Desktop\\ab.txt";
+		/*String fileName = "C:\\Users\\matum\\Desktop\\ab.txt";
 		
 		TextFileWriter writer = new TextFileWriter();
 		writer.write(fileName,"hola que tal ,,,daanonv  ?");
@@ -16,9 +17,15 @@ public class Main {
 		writer.write(fileName,"vamos a bailar");
 		
 		TextFileReader reader = new TextFileReader();
-		reader.read(fileName,3,2);
+		reader.read(fileName,3,2);*/
 		
 		Encryptor a = new Encryptor();
-		a.encrypt("ab", 83, 89, 5009);
+		String encryptado = a.encrypt("ab", 83, 89, 5009);
+		System.out.println(encryptado);
+		
+		Decryptor b = new Decryptor();
+		String desencryptado = b.decrypt(encryptado, 83, 89, 2753);
+		System.out.println(desencryptado);
+		
 	}
 }

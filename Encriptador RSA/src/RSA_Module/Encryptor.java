@@ -5,8 +5,6 @@ public class Encryptor {
 		int n;
 
 	    n = calculateN(p,q);
-	  
-	   // phi = calculatePhi(p,q);
 
 	    String encryptedText = encryptMsg(msg,e,n);
 	    return encryptedText;
@@ -15,22 +13,6 @@ public class Encryptor {
 	private int calculateN(int p, int q){
 	    return p*q;
 	}
-	
-/*	private int calculatePhi(int p, int q){
-	    return ( p - 1 ) * ( q - 1 );
-	}
-
-	private int calculateD(int e, int phi){
-	    int d;
-	    int k = 1;
-	    while ( true ){
-	        k = k + phi;
-	        if ( k % e == 0){
-	            d = (k / e);
-	            return d;
-	        }
-	    }
-	}*/
 
 	private String encryptMsg( String msg, int e, int n ){
 	    String encryptedText = "";
@@ -48,7 +30,6 @@ public class Encryptor {
 	        result = result * current;
 	        result = result % n;
 	    }
-	    System.out.println(result);
 	    return String.valueOf(result);
 	}
 }

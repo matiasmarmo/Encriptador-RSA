@@ -19,7 +19,6 @@ public class Decryptor {
 	    String substring = "";
 		for(int i=0; i<msg.length();i=i+4) {
 			substring = msg.substring(i, i+4);
-			System.out.println(substring);
 	    	decryptedText = decryptedText + decryptChar(substring,d,n);
 	    }
 	    return decryptedText;

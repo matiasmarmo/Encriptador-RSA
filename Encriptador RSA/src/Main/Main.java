@@ -1,5 +1,8 @@
 package Main;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import RSA_Module.Decryptor;
 import RSA_Module.Encryptor;
 import TextFileManager.TextFileReader;
@@ -20,12 +23,11 @@ public class Main {
 		reader.read(fileName,3,2);*/
 		
 		Encryptor a = new Encryptor();
-		String encryptado = a.encrypt("ab", 83, 89, 5009);
+		String encryptado = a.encrypt("abcdefghijklmnopqrstuvwxyz", 83, 89, 5009);
 		System.out.println(encryptado);
 		
 		Decryptor b = new Decryptor();
 		String desencryptado = b.decrypt(encryptado, 83, 89, 2753);
 		System.out.println(desencryptado);
-		
 	}
 }

@@ -30,6 +30,10 @@ public class Encryptor {
 	        result = result * current;
 	        result = result % n;
 	    }
-	    return String.valueOf(result);
+	    String resultado = String.valueOf(result);
+	    if(resultado.length()<4) {
+	    	resultado = "0" + resultado;
+	    }
+	    return resultado;
 	}
 }

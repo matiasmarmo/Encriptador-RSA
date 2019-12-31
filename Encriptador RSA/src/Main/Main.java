@@ -2,6 +2,7 @@ package Main;
 
 import RSA_Module.Decryptor;
 import RSA_Module.Encryptor;
+import TextFileManager.TextFileAddLine;
 import TextFileManager.TextFileOverwriteLine;
 import TextFileManager.TextFileReader;
 import TextFileManager.TextFileWriter;
@@ -34,7 +35,10 @@ public class Main {
 		TextFileReader reader = new TextFileReader();
 		reader.read(fileName,0,6);*/
 		
-		TextFileOverwriteLine ov = new TextFileOverwriteLine();
-		ov.overwriteLine(fileName, "carlos", 5);
+		/*TextFileOverwriteLine ov = new TextFileOverwriteLine();
+		ov.overwriteLine(fileName, "carlos", 5);*/
+		
+		TextFileAddLine ove = new TextFileAddLine();
+		ove.addLine(fileName, "jose", 1);
 	}
 }

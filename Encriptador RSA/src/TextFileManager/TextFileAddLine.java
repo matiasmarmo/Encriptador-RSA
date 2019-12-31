@@ -9,7 +9,10 @@ import java.io.PrintWriter;
 public class TextFileAddLine {
 	public void addLine(String fileName, String newText, int lineToAdd){
 		lineToAdd = lineToAdd - 1;
-		int FileNumberOfLines = numberOfLines(fileName);
+
+		TextFileCommons helper = TextFileCommons.getInstance();
+		int FileNumberOfLines = helper.numberOfLines(fileName);
+		
 		String text = "";
 		try {
 			FileReader readfile = new FileReader(fileName);
@@ -35,18 +38,5 @@ public class TextFileAddLine {
 		
 		TextFileWriter writer2 = new TextFileWriter();
 		writer2.write(fileName,text);
-	}
-	
-	private int numberOfLines(String fileName) {
-		int lines = 0;
-		try {
-			FileReader readfile = new FileReader(fileName);
-			BufferedReader reader = new BufferedReader(readfile);
-			while (reader.readLine() != null) lines++;
-			reader.close();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		return lines;
 	}
 }

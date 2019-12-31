@@ -8,7 +8,10 @@ public class TextFileReader {
 	public String read(String fileName, int initialLineNumber, int length){
 		int lineNumber;
 		int finalLineNumber = initialLineNumber + length;
-		int FileNumberOfLines = numberOfLines(fileName);
+		
+		TextFileCommons helper = TextFileCommons.getInstance();
+		int FileNumberOfLines = helper.numberOfLines(fileName);
+		
 		String text = "";
 		try {
 			FileReader readfile = new FileReader(fileName);
@@ -24,18 +27,5 @@ public class TextFileReader {
 			e.printStackTrace();
 		}
 		return text;
-	}
-	
-	private int numberOfLines(String fileName) {
-		int lines = 0;
-		try {
-			FileReader readfile = new FileReader(fileName);
-			BufferedReader reader = new BufferedReader(readfile);
-			while (reader.readLine() != null) lines++;
-			reader.close();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		return lines;
 	}
 }

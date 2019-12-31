@@ -2,6 +2,7 @@ package Main;
 
 import RSA_Module.Decryptor;
 import RSA_Module.Encryptor;
+import TextFileManager.TextFileOverwriteLine;
 import TextFileManager.TextFileReader;
 import TextFileManager.TextFileWriter;
 
@@ -10,7 +11,7 @@ public class Main {
 		String fileName = "C:\\Users\\matum\\Desktop\\ab.txt";
 		String mensaje = "abcdefghijklmnopqrstuvwxyz";
 		
-		Encryptor a = new Encryptor();
+	/*	Encryptor a = new Encryptor();
 		String encryptado = a.encrypt(mensaje, 83, 89, 5009);
 		
 		TextFileWriter writer = new TextFileWriter();
@@ -21,6 +22,19 @@ public class Main {
 		
 		Decryptor b = new Decryptor();
 		String desencryptado = b.decrypt(mensajeLeido, 83, 89, 2753);
-		System.out.println(desencryptado);
+		System.out.println(desencryptado);*/
+		
+	/*	TextFileWriter writer = new TextFileWriter();
+		writer.write(fileName,"hola que tal ,,,daanonv  ?");
+		writer.write(fileName,"que haces maquina ? asdasd");
+		writer.write(fileName,"tal vez ?");
+		writer.write(fileName,"lalalal sd");
+		writer.write(fileName,"vamos a bailar");
+
+		TextFileReader reader = new TextFileReader();
+		reader.read(fileName,0,6);*/
+		
+		TextFileOverwriteLine ov = new TextFileOverwriteLine();
+		ov.overwriteLine(fileName, "carlos", 5);
 	}
 }
